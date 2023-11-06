@@ -179,3 +179,16 @@ python plan_and_preprocess_entrypoints.py -d 2
 ```
 
 其中的 `2` 表示对第二个数据集 `Dataset002` 进行生成。
+
+
+
+### 预测
+
+预测再说，主管预测的文件在 `nnunetv2\inference\predict_from_raw_data.py` 中。同样需要加入路径说明：
+
+```python
+import sys
+sys.path.append(r'E:\pyCharm\Project\nnUNet-master')
+```
+
+替换为自己实际的路径，然后看一下整个的代码文件，修改成自己用的数据集，之后运行该文件即可。
