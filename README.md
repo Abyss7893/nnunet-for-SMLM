@@ -1,2 +1,28 @@
 # nnunet-for-SMLM
-The project is one of the subsidiary subprojects.
+该项目存在两个分支：
+
+* `data`
+* `main`
+
+
+
+其中 `data` 分支储存的是在进行数据集格式转换时用到的脚本代码。使用到的数据集有：
+
+```python
+path = ['0.1', '0.2', '0.05', '0.05,1600', '0.15',
+            '2,1000', '2,1000,500', 'cell', 'epl', 'gfp']
+```
+
+每个文件夹的结构为：
+
+``` txt
+0.1
+ |
+ | --- ground_truth
+ | 			|
+ |          | --- frame_xxx.jpg
+ | --- Artifical dataset.tif
+```
+
+如果想用该代码生成其他数据集的话，只需修改相应的绝对路径为本地路径即可。
+
