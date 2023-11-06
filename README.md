@@ -40,11 +40,24 @@ path = ['0.1', '0.2', '0.05', '0.05,1600', '0.15',
 * `nnUNet_preprocessed`：存放预处理的数据集，该神经网络会根据这些预处理的内容进行合理调整网络结构
 * `nnUNet-results`：存放结果数据
 
-已经将结果数据集放在云盘：
+已经将结果数据集放在[云盘](https://bhpan.buaa.edu.cn/link/AA19B283D74EFD46E59D6C452B1F91BA38),下载后直接替换即可。`https://bhpan.buaa.edu.cn/link/AA19B283D74EFD46E59D6C452B1F91BA38`
+文件夹名：SMLM_data
+有效期限：2023-12-07 06:08
 
-下载后直接替换即可。
 
 
+
+
+对原始数据集中文件结构进行说明：
+
+```
+- **imagesTr** contains the images belonging to the training cases. nnU-Net will perform pipeline configuration, training with 
+cross-validation, as well as finding postprocessing and the best ensemble using this data. 
+- **imagesTs** (optional) contains the images that belong to the test cases. nnU-Net does not use them! This could just 
+be a convenient location for you to store these images. Remnant of the Medical Segmentation Decathlon folder structure.
+- **labelsTr** contains the images with the ground truth segmentation maps for the training cases. 
+- **dataset.json** contains metadata of the dataset.
+```
 
 ### 路径变更
 
@@ -147,3 +160,22 @@ iment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'fore
 
 同时也可以在 `nnUNet_results` 中找到对应的日志文件。
 
+
+
+### 数据集更改
+
+目前十个数据集全部为训练集，如果想额外加数据的话可以使用之前那个数据转换的脚本生成后添加进来，另外记得修改 `dataet.json` 文件。
+
+
+
+如果想知道自己的数据集是否正确时，可以运行 `nnunet2\experiment_planning\verify_dataset_integrity.py` 进行验证。
+
+
+
+如果想重新生成预处理的结果数据(也即 `nnUNet_preprocessed` 文件夹里的) 可以运行同级目录下的文件 `plan_and_preprocess_entrypoints.py` 有：
+
+```bash
+python plan_and_preprocess_entrypoints.py -d 2
+```
+
+其中的 `2` 表示对第二个数据集 `Dataset002` 进行生成。
