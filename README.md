@@ -164,7 +164,7 @@ iment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'fore
 
 ### 数据集更改
 
-目前十个数据集全部为训练集，如果想额外加数据的话可以使用之前那个数据转换的脚本生成后添加进来，另外记得修改 `dataet.json` 文件。
+目前十个数据集全部为训练集，如果想额外加数据的话可以使用之前那个数据转换的脚本生成后添加进来，另外记得修改 `dataset.json` 文件。
 
 
 
